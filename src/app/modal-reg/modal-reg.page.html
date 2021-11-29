@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Record</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="regForm" (ngSubmit)="createSesionData()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="email" type="text" [class.is-invalid]="emailNotValid" required></ion-input>
+          </ion-item>
+          <small *ngIf="emailNotValid" class="text-danger">You must enter a
+            valid email</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Name <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="name" type="text" [class.is-invalid]="nombreNotValid" required>
+            </ion-input>
+          </ion-item>
+          <small *ngIf="nombreNotValid" class="text-danger">You must enter a
+            valid name (min. 3)</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Lastname <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="lastname" type="text" [class.is-invalid]="apellidoNotValid" required>
+            </ion-input>
+          </ion-item>
+          <small *ngIf="apellidoNotValid" class="text-danger">You must enter a
+            Valid last name (min. 3)</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Age <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="age" type="number" [class.is-invalid]="edadNotValid" required>
+            </ion-input>
+          </ion-item>
+          <small *ngIf="edadNotValid" class="text-danger">You must enter the max age (99)</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="password" type="password" [class.is-invalid]="passwordNotValid" required></ion-input>
+          </ion-item>
+          <small *ngIf="passwordNotValid" class="text-danger">The password must be a minimum of 5 characters</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button class="mt-2" expand="block" color="primary" type="submit" [disabled]="regForm.invalid">
+            to register
+          </ion-button>
+        </ion-col> 
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="primary" (click)="exit()" slot="end" class="ion-margin-end">Exit</ion-button>
+  </ion-toolbar>
+</ion-footer>

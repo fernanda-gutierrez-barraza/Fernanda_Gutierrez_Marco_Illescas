@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Back" color="primary" mode="ios" >
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-list >
+      <ion-item>
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        
+        <ion-label > LogOut   </ion-label>
+        
+        <ion-button  
+           shape="round" fill="outline" (click)="LogOut()" routerLink="/login" >
+          Exit
+        </ion-button>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-icon slot="start" name="swap-horizontal-outline" ></ion-icon>
+        <ion-label> Change Password </ion-label>
+        <ion-button  
+           shape="round" fill="outline"  routerLink="/modify-user" >
+          Go
+        </ion-button>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-icon slot="start" name="swap-horizontal-outline" ></ion-icon>
+        <ion-label> Change Username </ion-label>
+        <ion-button  
+           shape="round" fill="outline"  routerLink="/change-username" >
+          Go
+        </ion-button>
+      </ion-item>
+
+      
+    </ion-list>
+  </ion-card>
+
+</ion-content>
